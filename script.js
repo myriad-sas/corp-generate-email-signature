@@ -129,7 +129,7 @@
           locationWrap.innerHTML = "Spain";
           break;
         case 'abidjan':
-          locationWrap.innerHTML = "Abidjan";
+          locationWrap.innerHTML = "Immeuble Plein Ciel Boulevard Valéry Giscard d'Estaing <br/> Zone 4, Marcory Abidjan";
           break;
         case 'dakar':
           locationWrap.innerHTML = "Immeuble Sen Assurance Vie - VDN, Mermoz, Dakar, Sénégal";
