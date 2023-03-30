@@ -7,11 +7,18 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css" integrity="sha512-F7WyTLiiiPqvu2pGumDR15med0MDkUIo5VTVyyfECR5DZmCnDhti9q5VID02ItWjq6fvDfMaBaDl2J3WdL1uxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Urbanist&display=swap');
+      body {
+        font-family: 'Urbanist', sans-serif;
+      }
+      .is-hidden{
+        display: none !important;
+      }
+    </style>
     <title>Generate Myriad Group Email Signature</title>
   </head>
-  <body class="p-3 border border-5" style="font-family:Urbanist,Helvetica, sans-serif;"">
-
+  <body>
     <section class="section">
       <div class="container p-5">
         <div class="text-center">
@@ -36,8 +43,8 @@
     <section class="section">
       <div class="container">
         <div class="row pb-5">
-          <div class="col p-4 border-end">
-            <h1 class="display-6">Add your information:</h1>
+          <div class="col-5 p-4 border-end">
+            <h3>Add your information:</h3>
             <form id="form">
               <div class="mb-3">
                 <label for="name" class="form-label">Full Name:</label>
@@ -73,6 +80,21 @@
                 <label for="email" class="form-label">Email:</label>
                 <input class="form-control" id="email" placeholder="Your email">
               </div>
+
+              <div class="mb-3">
+                <label for="checkPhone" class="form-label">Locations:</label>
+                <div class="input-group mb-3">
+                  <select class="form-control"  id="locations" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected value="paris">Paris</option>
+                    <option value="dakar">Dakar</option>
+                    <option value="abidjan">Abidjan</option>
+                    <option value="london">London</option>
+                    <option value="spain">Spain</option>
+                  </select>
+                  
+                </div>
+              </div>
+
               
               <!-- <div class="mb-3">
                 <label for="checkIcons" class="form-label">Icons:</label>
@@ -87,23 +109,33 @@
             </form>
           </div>
           <div class="col p-4">
-            <h1 class="display-6">Preview:</h1>
+            <h3>Preview:</h3>
             
-            <div class="card is-primary mb-5">
+            <div class="card is-primary mb-5" style="margin-top: 30px;">
               <div class="card-body" id="signature_container">
 
-                <table style="color: rgb(0, 0, 0); font-family: Arial, serif; width: 100%;  padding-top: 24px;padding-bottom: 24px; " cellspacing="0" cellpadding="0" id="signature">
+                <table style="font-family:Urbanist, sans-serif;color: rgb(0, 0, 0); font-family: 'Urbanist', serif; width: 650px;  padding-top: 24px;padding-bottom: 24px;border:none " cellspacing="0" cellpadding="0" id="signature">
                   <tr>
             
-                      <td style="padding: 0px 20px 0px 10px;">
-                        <p style="padding-top:20px;color:rgb(85, 85, 85); font-family:Urbanist,Helvetica, sans-serif;margin: 0px; font-size: 18px; line-height: 21px; font-weight: 700;">
+                      <td style="padding: 0px 20px 0px 10px;width: 330px; ">
+                        <p style="padding-top:20px;color:rgb(85, 85, 85); margin: 0px; font-size: 18px; line-height: 21px; font-weight: 700;">
                           <span class="name" id="preparedName" style="color:rgb(60, 111, 183); font-weight:bold;">
                             Name
                           </span>
                         </p>
-                        <p style="font-family:Urbanist,Helvetica, sans-serif;margin: 0px; font-size: 14px; line-height: 22px;">
+                        <p style="margin: 0px; font-size: 14px; line-height: 22px;">
+                          
+                          <img src="" class="jobLogo" alt="specialis" style="width: 20px; height: auto;padding-right:3px" width="20px" height="20px">
+                          
                           <span class="designation">
                             Specialist in...
+                          </span>
+                        </p>
+                        <p style="margin: 0px; font-size: 14px; line-height: 22px;">
+                          <img src="" class="mapsLogo" alt="location" style="width: 20px; height: auto;padding-right:3px" width="20px" height="20px">
+                          
+                          <span class="locationWrap">
+                            Locate in...
                           </span>
                         </p>
                         <p style="margin: 0px; font-size: 0px;padding-top:5px">
@@ -113,20 +145,29 @@
                           <div id="imageWrap"></div>
                         </p>
                       </td>
-                      <td style="padding: 0px 0px 0px 40px; border-left: 1px solid rgb(231, 229, 247);font-family:Urbanist,Helvetica, sans-serif;">
+                      <td style="padding: 0px 0px 0px 40px; border-left: 1px solid rgb(231, 229, 247);">
                         <p style="margin: 0px; font-size: 13px; line-height: 29px;">
-                          <div id="whatAppWrap"></div>
+                          <img src="" class="whatsappLogo" alt="whats App" style="width: 20px; height: auto;padding-right:3px" width="20px" height="20px">
+                          <span id="whatAppWrap" style="color:rgb(85, 85, 85); text-decoration:none;"></span>
                         </p>
-                        <p style="margin: 0px; font-size: 13px; line-height: 29px;"><img src="https://reply.io/wp-content/uploads/signature-generator-phone.png" alt="" style="margin-right: 10px;" width="14" height="14"><span id="phoneWrap"><span></span></span></p>
                         <p style="margin: 0px; font-size: 13px; line-height: 29px;">
-                          <img src="https://reply.io/wp-content/uploads/signature-generator-email.png" alt="" style="margin-right: 10px;" width="14" height="11">
-                          <span style="white-space:nowrap">
+                          <img src="" class="phoneLogo" alt="phone" style="width: 20px; height: auto;padding-right:3px" width="20px" height="20px">
+                          <span id="phoneWrap" style="color:rgb(85, 85, 85); text-decoration:none;"></span>
+                        </p>
+                        <p style="margin: 0px; font-size: 13px; line-height: 29px;">
+                          <img src="" class="emailLogo" alt="email" style="width: 20px; height: auto;padding-right:3px" width="20px" height="20px">
+                          <span style="white-space:nowrap;color:rgb(85, 85, 85); text-decoration:none;">
                             <a class="email" href="mailto:yourcompany@myriadgroup.com" style="color:rgb(85, 85, 85); text-decoration:none;">
                               yourcompany@myriadgroup.com
                             </a>
                           </span>
                         </p>
-                        <p style="margin: 0px; font-size: 13px; line-height: 29px;"><img src="https://reply.io/wp-content/uploads/signature-generator-website.png" alt="" style="margin-right: 10px;" width="14" height="14"><span>connect.<span style="color:rgb(60, 111, 187);">myriadgroup</span>.com</span></p>
+                        <p style="margin: 0px; font-size: 13px; line-height: 29px;">
+                          <img src="" class="websiteLogo" alt="website" style="width: 20px; height: auto;padding-right:3px" width="20px" height="20px">
+                          <a target="_blank" href="https://connect.myriadgroup.com" style="color:rgb(85, 85, 85); text-decoration:none;">
+                            connect.<span style="color:rgb(60, 111, 187);">myriadgroup</span>.com
+                          </a>
+                        </p>
                         <!--v-if-->
                         <p style="margin: 0px;">
                           <!--v-if--><!--v-if-->
@@ -157,8 +198,8 @@
             </div>
 
             <div>
-              <h1 class="display-6">Instructions:</h1>
-              <span class="lead">Simple click the above button <span class="text-primary font-monospace"> Copy Signature </span> and head towards gmail settings and paste. That's it!</p>
+              <h3>Instructions:</h3>
+              <span class="lead">Simple click the above button <span class="text-primary font-monospace"> Copy Signature </span> and head towards emails settings and paste. That's it!</p>
             </div>
             
           </div>
