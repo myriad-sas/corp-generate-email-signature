@@ -17,11 +17,6 @@
     var savedNode = null;
     var savedLogo = null;
 
-    var locations    = doc.querySelector('#locations');
-    var locationWrap = doc.querySelector('.locationWrap');
-
-    locations.addEventListener('change', updateLocations);
-
     var logoWrap = doc.querySelector('#logoWrap');
     var bannerWrap = doc.querySelector('#imageWrap');
     var bannerInput = doc.querySelector('#image');
@@ -31,7 +26,7 @@
     var  emailLogo = doc.querySelector('.emailLogo');
     var  websiteLogo = doc.querySelector('.websiteLogo');
     var  phoneLogo = doc.querySelector('.phoneLogo');
-    var mapsLogo =  doc.querySelector('.mapsLogo'); 
+    //var mapsLogo =  doc.querySelector('.mapsLogo'); 
     var  whatsapp = doc.querySelector('.whatsappLogo');
     var youtube = doc.querySelector('.youtube');
     var linkedin = doc.querySelector('.linkedin');
@@ -117,26 +112,6 @@
       logoWrap.appendChild(savedLogo);
     }
 
-    function updateLocations() {
-      switch(locations.selectedOptions[0].value) {
-        case 'london':
-          locationWrap.innerHTML = "London";
-          break;
-        case 'paris':
-          locationWrap.innerHTML = "18 rue de Calais, 75009 Paris, France";
-          break;
-        case 'spain':
-          locationWrap.innerHTML = "Spain";
-          break;
-        case 'abidjan':
-          locationWrap.innerHTML = "Immeuble Plein Ciel Boulevard Valéry Giscard d'Estaing <br/> Zone 4, Marcory Abidjan";
-          break;
-        case 'dakar':
-          locationWrap.innerHTML = "Immeuble Sen Assurance Vie - VDN, Mermoz, Dakar, Sénégal";
-          break;
-      }
-    }
-
     function updateSignature(e) {
       var id = e.target.id;
       var value = e.target.value;
@@ -195,7 +170,6 @@
     }
 
     function ready() {
-      updateLocations()
 
       linkedin.src = linkedinLogo;
       youtube.src = youtubeLogo;
@@ -203,7 +177,7 @@
       websiteLogo.src = websiteIcon;
       emailLogo.src = emailIcon;
       phoneLogo.src = phoneIcon;    
-      mapsLogo.src  = mapsIcon;   
+      //mapsLogo.src  = mapsIcon;   
       jobLogo.src  = jobIcon;   
 
       if (!checkPhone.checked) {
